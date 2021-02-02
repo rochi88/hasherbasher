@@ -19,17 +19,17 @@ func worker(res chan Result, counter *int64, minLength, maxLength int, finished 
 	var inputString string
 	md5hasher := md5.New()
 	delta := maxLength - minLength
-	var randFunc func() string
+	// var randFunc func() string
 
-	if delta > 0 {
-		randFunc = func() string {
-			return randString(minLength+randomSource.Intn(maxLength-minLength), randomSource)
-		}
-	} else {
-		randFunc = func() string {
-			return randString(minLength, randomSource)
-		}
-	}
+	// if delta > 0 {
+	// 	randFunc = func() string {
+	// 		return randString(minLength+randomSource.Intn(maxLength-minLength), randomSource)
+	// 	}
+	// } else {
+	// 	randFunc = func() string {
+	// 		return randString(minLength, randomSource)
+	// 	}
+	// }
 
 	for {
 		if *finished {
